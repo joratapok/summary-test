@@ -17,7 +17,7 @@ export const InputContainer = styled.div<ContainerProps>`
   width: ${({width}) => (width ? width + 'px' : 'auto')};
   position: relative;
   background-color: ${({isActive}) =>
-    isActive ? 'rgba(0, 0, 0, 0.06)' : 'none'};
+    isActive ? 'rgba(0, 0, 0, 0.06)' : 'transparent'};
   border-width: 0;
   border-bottom: ${({isActive, isError}) =>
     isActive ? (isError ? '1px solid #EB5757' : '1px solid') : '0'};
@@ -32,7 +32,7 @@ export const InputText = styled.button<Props>`
   color: inherit;
   border: none;
   cursor: pointer;
-  //font-size: ${(props) => (props.fontsize === 'small' ? '1rem' : '2.5rem')};
+  background-color: inherit;
 `;
 
 export const ActiveInput = styled.input<Props>`
