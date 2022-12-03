@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react';
+import React, {useCallback, useMemo} from 'react';
 import {
   InputLangContainer,
   LangContainer,
@@ -14,6 +14,9 @@ import {H4} from '../UI/typography/H4';
 export const LanguagesEditor = () => {
   const dispatch = useAppDispatch();
   const {skills} = useAppSelector((state) => state.summarySlice);
+  const sortedSkills = useMemo(() => {
+    return [...skills].sort((a, b) => b.term - a.term);
+  }, [skills]);
   const {addSkillLang} = summarySlice.actions;
   const createNewLang = useCallback((name: string) => {
     dispatch(addSkillLang(name));
@@ -22,7 +25,7 @@ export const LanguagesEditor = () => {
   return (
     <LangContainer>
       <LangItemsContainer>
-        {skills.map((el) => (
+        {sortedSkills.map((el) => (
           <LangItem key={el.id} name={el.lang} />
         ))}
         <InputLangContainer>

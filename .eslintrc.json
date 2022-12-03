@@ -8,11 +8,11 @@
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
-    "no-unused-vars": "warn",
+    "no-unused-vars": "off",
     "prefer-const": "error",
     "quotes": ["error", "single"],
     "jsx-quotes": ["error", "prefer-double"],
-    "indent": ["warn", 2],
+    "indent": ["off", 2],
     "max-len": ["error", { "code": 80, "ignoreUrls": true }],
     "comma-dangle": ["warn", "always-multiline"],
     "semi": ["warn", "always"],
